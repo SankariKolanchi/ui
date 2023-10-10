@@ -1,7 +1,7 @@
 import 'package:amazon/themes/app_text_style.dart';
 import 'package:flutter/material.dart';
 
-import 'amazonDetail.dart';
+import 'amazon_detail.dart';
 
 class Amazon extends StatelessWidget {
   const Amazon({super.key});
