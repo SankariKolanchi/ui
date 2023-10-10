@@ -121,10 +121,14 @@ class _AmazonDetailState extends State<AmazonDetail> {
           spacing: 5,
         ),
       ),
+      SizedBox(
+        height: 20,
+      ),
       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 40),
+            padding: const EdgeInsets.only(left: 30),
             child: Text("Top Selling Product",
                 style: TextStyle(
                   fontFamily: 'Inter',
@@ -137,19 +141,22 @@ class _AmazonDetailState extends State<AmazonDetail> {
           SizedBox(
             width: 60,
           ),
-          Text(
-            "View All",
-            style: TextStyle(
-              color: Colors.orange,
-              fontSize: 15,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "View All",
+              style: TextStyle(
+                color: Colors.orange,
+                fontSize: 15,
+              ),
             ),
           )
         ],
       ),
-      SingleChildScrollView(
-        child: Row(
-          children: [
-            Column(
+      Row(
+        children: [
+          Expanded(
+            child: Column(
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.only(
@@ -163,13 +170,58 @@ class _AmazonDetailState extends State<AmazonDetail> {
                 Padding(
                   padding: const EdgeInsets.only(left: 40, right: 10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                          "Lorem Ipsum",
-                          style: TextStyle(
-                            fontSize: 20,
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            "Lorem Ipsum",
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Image.asset("assets/images/cart.png"),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset("assets/images/Star.png"),
+                    Text("5673 Reviews")
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                  child: Container(
+                    child: Image.asset("assets/images/image 5.png"),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            "Lorem Ipsum",
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
                           ),
                         ),
                       ),
@@ -188,62 +240,28 @@ class _AmazonDetailState extends State<AmazonDetail> {
                 ),
               ],
             ),
-            SizedBox(
-              width: 300,
-              child: SingleChildScrollView(
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          ),
-                          child: Container(
-                            child: Image.asset("assets/images/image 5.png"),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40, right: 10),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(20),
-                                child: Text(
-                                  "Lorem Ipsum",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ),
-                              Image.asset("assets/images/cart.png"),
-                            ],
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(20),
-                              child: Image.asset("assets/images/Star.png"),
-                            ),
-                            Text("5673 Reviews")
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+          ),
+        ],
+      ),
+      Padding(
+        padding: const EdgeInsets.only(left: 40),
+        child: Row(
+          children: [
+            Text(
+              "Most Viewed Product",
+              style: TextStyle(
+                color: Colors.black,
               ),
-            )
+            ),
+            SizedBox(
+              width: 90,
+            ),
+            Text(
+              "ViewAll",
+              style: TextStyle(fontSize: 15, color: Colors.orange),
+            ),
           ],
         ),
-      ),
-      Row(
-        children: [
-          Text("Most Viewed Product"),
-          Text("ViewALL"),
-        ],
       )
     ])));
   }
